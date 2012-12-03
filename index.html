@@ -14,6 +14,7 @@
     //
     function onDeviceReady() {
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        document.addEventListener("resume", onResume, false);
     }
 
     // onSuccess Geolocation
@@ -36,13 +37,27 @@
         alert('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
     }
-     function onShow() {
-    navigator.splashscreen.show();
-      }
+   function onResume() {
+       showAlert();
+    }
+        function alertDismissed() {
+        // do something
+    }
+
+    // Show a custom alertDismissed
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
     </script>
   </head>
   <body>
     <p id="geolocation">Finding geolocation...</p>
-    <p><a href="#" onclick="onShow(); return false;">Show Alert</a></p>
+    <p><a href="#" onclick=" showAlert(); return false;">Show Alert</a></p>
   </body>
 </html>
