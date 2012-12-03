@@ -38,7 +38,7 @@
                 'message: ' + error.message + '\n');
     }
    function onResume() {
-       onSuccess(position);
+       navigator.geolocation.getCurrentPosition(onSuccess, onError);
     }
         function alertDismissed() {
         // do something
