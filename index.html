@@ -36,10 +36,13 @@
         alert('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
     }
-
+     function onShow() {
+    navigator.splashscreen.show();
+      }
     </script>
   </head>
   <body>
     <p id="geolocation">Finding geolocation...</p>
+    <p><a href="#" onclick="onShow(); return false;">Show Alert</a></p>
   </body>
 </html>
