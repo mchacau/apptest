@@ -2,9 +2,12 @@
 <html>
   <head>
     <title>Cordova Resume Example</title>
-   <script type="text/javascript" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
+   <script type="text/javascript" src="phonegap.js"></script>  
+  </head>
+<p id="demo"></p>
+ <p id="geolocation"></p>
+  <script type="text/javascript" charset="utf-8"> 
+   
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -21,18 +24,8 @@
     function onSuccess(position) {
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                            'Longitude: '          + position.coords.longitude             + '<br />' +
-                            'Altitude: '           + position.coords.altitude              + '<br />' +
-                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            'Heading: '            + position.coords.heading               + '<br />' +
-                            'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          +                                   position.timestamp          + '<br />';
-                            
-  var lt1 = position.coords.latitude;
-  var ln1 = position.coords.longitude;
-
-    }
+                            'Longitude: '          + position.coords.longitude             + '<br />' +;
+                             }
 
     // onError Callback receives a PositionError object
     //
@@ -58,13 +51,10 @@
         );
     }
   
-  </script>
   
-  </head>
-<p id="demo"></p>
- <p id="geolocation">Finding geolocation...</p>
-  <script type="text/javascript" charset="utf-8"> 
-    
+  var lt1 = position.coords.latitude;
+  var ln1 = position.coords.longitude;
+   
 function distance(lat1,lon1,lat2,lon2) {
     var R = 6371; // km (change this constant to get miles)
     var dLat = (lat2-lat1) * Math.PI / 180;
