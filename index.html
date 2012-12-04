@@ -19,14 +19,10 @@
     // onSuccess Geolocation
     //
     var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
+  var lt1 = position.coords.latitude;
+  var ln1 = position.coords.longitude;
+  var rre = lt1;
+    alert (rre);
 };
 
     // onError Callback receives a PositionError object
@@ -53,9 +49,8 @@
         );
     }
 
-  var lt1 = position.coords.latitude;
-  var ln1 = position.coords.longitude;
   
+
   </script>
   
   </head>
