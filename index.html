@@ -19,15 +19,8 @@
     // onSuccess Geolocation
     //
     function onSuccess(position) {
-        var element = document.getElementById('geolocation');
-        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                            'Longitude: '          + position.coords.longitude             + '<br />' +
-                            'Altitude: '           + position.coords.altitude              + '<br />' +
-                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            'Heading: '            + position.coords.heading               + '<br />' +
-                            'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          +                                   position.timestamp          + '<br />';
+     var lt1 = position.coords.latitude;
+     var ln1 = position.coords.longitude;
     }
 
     // onError Callback receives a PositionError object
@@ -54,14 +47,14 @@
         );
     }
 
-  var lt1 = + position.coords.latitude              + ;
-  var ln1 = + position.coords.longitude             +;
+  var lt1 = position.coords.latitude;
+  var ln1 = position.coords.longitude;
   
   </script>
   
   </head>
   <body>
-   <p id="geolocation">Finding geolocation...</p>
+
 <p id="demo"></p><p id="demo1"></p>
 
   <script type="text/javascript" charset="utf-8"> 
