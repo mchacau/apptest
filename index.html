@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Device Properties Example</title>
-
+    <title>Cordova Resume Example</title>
    <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -54,10 +53,33 @@
             'Done'                  // buttonName
         );
     }
-    </script>
+
+  var lt1 = position.coords.latitude;
+  var ln1 = position.coords.longitude;
+  var lt2 = position.coords.latitude;
+  var ln2 = position.coords.longitude;
+  
+  </script>
+  
   </head>
-  <body>
-    <p id="geolocation">Finding geolocation...</p>
-    <p><a href="#" onclick=" showAlert(); return false;">Show Alert</a></p>
+<p id="demo"></p><p id="demo1"></p>
+ <p id="geolocation">Finding geolocation...</p>
+  <script type="text/javascript" charset="utf-8"> 
+    
+function distance(lat1,lon1,lat2,lon2) {
+    var R = 6371; // km (change this constant to get miles)
+    var dLat = (lat2-lat1) * Math.PI / 180;
+    var dLon = (lon2-lon1) * Math.PI / 180; 
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1 * Math.PI / 180 ) * Math.cos(lat2 * Math.PI / 180 ) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2); 
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+    var d = R * c;
+    return Math.round(d*1000);
+}
+
+document.getElementById("demo").innerHTML=distance(lt1,ln1,-27.614617,153.044336);
+document.getElementById("demo1").innerHTML=distance(lt2,ln2,-27.614617,153.044336);
+    </script>
   </body>
 </html>
