@@ -32,13 +32,8 @@
     var onSuccess = function(position) {
   var lt1 = position.coords.latitude;
   var ln1 = position.coords.longitude;
-  var rre = lt1;
-  var rrep = ln1;
-
-
-  var store = distance(rre,rrep,-27.614617,153.044336);
-	var storelocation = store;
-	alert(storelocation);
+  var store = distance(lt1,ln1,-27.614617,153.044336);
+	alert(store);
 
 
 };
